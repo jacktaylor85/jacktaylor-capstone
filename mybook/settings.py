@@ -31,6 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net', '.herokuapp.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net", "https://*.herokuapp.com"]
 
 # Application definition
 
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'user',
+    'booking',
     'mybook',
 ]
 

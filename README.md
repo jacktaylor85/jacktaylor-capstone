@@ -152,6 +152,18 @@ Acceptance Criteria:
 
 - Integrate a third party calendar
 
+## Planning
+
+### Wireframes
+Home Page:
+![Capstone Homepage](docs/wireframes/Capstone%20HomePage.png)
+
+### Agile Development
+Kanban Board:
+![Kanban board](docs/agile/Agile%20Development%20Snapshot.png)
+
+### Entity Relationship Diagram
+![ERD](docs/erd/Untitled.png)
 ## Features
 
 ## Design
