@@ -6,17 +6,46 @@ nav {
     background-color: #363636;
 }
 
-.navbar {
+.nav-link {
     font-size: x-large;
     font-family: 'raleway';
     font-weight: bold;
+    color: white;
 }
 
-.mybook-title
+.navbar-brand
 {
     font-family: 'raleway';
     font-weight: bold;
     font-size: xxx-large;
     color: white;
+    padding-left: 50px;
 }
+.navbar-brand:hover {
+    text-decoration: none; /* Remove underline */
+    color: white;        /* Keep the color the same as normal (no change on hover) */
+    background-color: transparent; /* Prevent background color change */
+  }
 
+  .hero-img {
+    border-radius: 50%;
+    height: 52px;
+  }
+
+  .img-text {
+    position: absolute;  /* Positioning the text over the image */
+    top: 100px;           /* Adjust top position */
+    left: 20px;          /* Adjust left position */
+    background-color: rgba(0, 0, 0, 0.5); /* Grey background with opacity */
+    color: white;        /* Make the text visible (change as needed) */
+    font-size: 20px;     /* Adjust font size */
+    font-weight: bold;   /* Optional: Make text bold */
+    padding: 5px 10px;    /* Add padding around the text */
+    border-radius: 5px;   /* Optional: Rounded corners for the background */
+    max-width: 45%; /* Limit text width to 50% of the parent container (the image) */
+    word-wrap: break-word; /* Ensure text breaks within the box */
+  }
+
+  .img-text > p {
+    font-family: 'open sans';
+  }
