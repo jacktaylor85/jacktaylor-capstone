@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import login
 from .forms import BookingForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .models import BookableService
 # Create your views here.
 class HomePage(TemplateView):
     """
@@ -33,3 +34,21 @@ def register_view(request):
         form = UserCreationForm()
 
     return render(request, 'register.html', {'form': form})
+
+
+def services_page(request):
+    services = BookableService.objects.all()
+
+    
+    location = request.GET.get('location')
+    min_price = request.GET.get('min_price')
+    max_price = request.GET.get('max_price')
+
+    if location:
+        services = services.filter(location__icontains=location)
+    if min_price:
+        services = services.filter(price__gte=min_price)
+    if max_price:
+        services = services.filter(price__lte=max_price)
+
+    return render(request, 'services.html', {'services': services})
