@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from .forms import BookingForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from .models import BookableService
+from django.core.paginator import Paginator
 # Create your views here.
 class HomePage(TemplateView):
     """
@@ -51,4 +52,9 @@ def services_page(request):
     if max_price:
         services = services.filter(price__lte=max_price)
 
-    return render(request, 'services.html', {'services': services})
+    paginator = Paginator(services, 6)  # Show 6 services per page
+    page_number = request.GET.get('page')  # Get the page number from the GET request
+    page_obj = paginator.get_page(page_number)  # Get the page object for the requested page
+
+    return render(request, 'services.html', {'services': services,'page_obj': page_obj})
+   
