@@ -60,26 +60,6 @@ footer {
     overflow: hidden;
   }
 
-  .img-text-services {
-    position: absolute;  
-    top: 10%;           
-    left: 2%;          
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: white;        
-    font-size: 20px;    
-    font-weight: bold;   
-    padding: 5px 10px;    
-    border-radius: 5px;   
-    max-width: 90%; 
-    word-wrap: break-word; 
-    overflow: hidden;
-  }
-
- .img-services {
-  width: 100%;
-  height: auto;
- }
-
   .img-text > p {
     font-family: 'open sans';
   }
