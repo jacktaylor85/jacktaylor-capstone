@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import login
 from .forms import BookingForm
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from .models import BookableService
+from .models import BookableService, Booking
 from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 
@@ -16,15 +16,17 @@ class HomePage(TemplateView):
     template_name = 'index.html'
 
 def login_view(request):
+    form = AuthenticationForm()  
+
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
             return redirect('home')  
-        form = AuthenticationForm()
 
     return render(request, 'login.html', {'form': form})
+
 
 def register_view(request):
     if request.method == "POST":
@@ -58,22 +60,23 @@ def services_page(request):
 
     return render(request, 'services.html', {'services': services,'page_obj': page_obj})
    
+@login_required  
 def book_service(request, service_id):
-    service = get_object_or_404(BookableService, id=service_id) 
+    service = get_object_or_404(BookableService, id=service_id)
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.user = request.user
-            booking.service = service.name 
+            booking.service = service  
+            booking.user = request.user  
             booking.save()
             return redirect('profile') 
     else:
         form = BookingForm()
+
     return render(request, 'book_service.html', {'form': form, 'service': service})
 
-
-from django.contrib.auth.decorators import login_required
 
 @login_required
 def profile(request):

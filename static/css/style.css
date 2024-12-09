@@ -1,3 +1,9 @@
+* {
+  color: white;
+}
+
+
+
 body {
     background-color: #363636;
 }
@@ -6,12 +12,17 @@ nav {
     background-color: #363636;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: white;
 }
 
 .col-md-12{
@@ -71,3 +82,44 @@ footer {
   .btn-danger {
     font-family: 'raleway';
   }
+
+  .card-body > p, strong {
+    color: black  !important;
+  }
+
+  #id_checkin_date_year {
+    color: black !important ;
+}
+
+#id_checkin_date_month {
+  color: black !important ;
+}
+
+#id_checkin_date_day {
+  color: black !important ;
+}
+
+#id_checkout_date_year {
+    color: black !important;
+}
+
+#id_checkout_date_month {
+  color: black !important;
+}
+
+#id_checkout_date_day {
+  color: black !important;
+}
+
+#id_guests {
+    color: black !important;
+}
+
+select {
+  color: black !important;
+}
+
+
+select option {
+  color: black !important;
+}

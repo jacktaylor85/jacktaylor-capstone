@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+from django.utils import timezone
 # Create your models here.
 class BookableService(models.Model):
     name = models.CharField(max_length=100)
@@ -16,10 +17,12 @@ class BookableService(models.Model):
 
 class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
-    service = models.CharField(max_length=255, default="Default service")
-    booking_date = models.DateTimeField()
+    service = models.ForeignKey(BookableService, on_delete=models.CASCADE, related_name="bookings")  
+    checkin_date = models.DateField(default=timezone.now)  
+    checkout_date = models.DateField(default=timezone.now)  
+    guests = models.PositiveIntegerField(default=1)  
     status = models.CharField(max_length=50, choices=[("Pending", "Pending"), ("Confirmed", "Confirmed")], default="Default status")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.service} - {self.status}"
+        return f"{self.user.username} - {self.service.name} - {self.status}"
