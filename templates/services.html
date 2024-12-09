@@ -38,7 +38,7 @@
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
+                        <a class="nav-link" href="{% url 'profile' %}"><img
                                 src="{% static 'images/Profile_avatar_placeholder_large.png' %}"
                                 alt="base profile image" class="img-fluid hero-img"></a>
                     </li>
@@ -106,8 +106,7 @@
                                             <h5 class="card-title">{{ service.name }}</h5>
                                             <p>{{ service.description|truncatechars:100 }}</p>
                                             <p><strong>£{{ service.price }} / night</strong></p>
-                                            <p>Rating: {{ service.rating }}</p>
-                                            <a href="#" class="btn btn-primary">Book Now</a>
+                                            <a href="{% url 'book_service' service.id %}" class="btn btn-primary">Book Now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -117,13 +116,13 @@
                             <!-- Pagination Section -->
                             <div class="pagination mt-4">
                                 {% if page_obj.has_previous %}
-                                <a href="?page=1">&laquo; First</a>
-                                <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                                <a href="?page=1">&laquo; First </a>
+                                <a href="?page={{ page_obj.previous_page_number }}"> Previous </a>
                                 {% endif %}
                                 <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
                                 {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">Next</a>
-                                <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                                <a href="?page={{ page_obj.next_page_number }}"> Next </a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}"> Last &raquo; </a>
                                 {% endif %}
                             </div>
                         </div>

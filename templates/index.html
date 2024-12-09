@@ -37,7 +37,7 @@
             <a class="nav-link" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><img src="static/images/Profile_avatar_placeholder_large.png"
+            <a class="nav-link" href="{% url 'profile' %}"><img src="static/images/Profile_avatar_placeholder_large.png"
                 alt="base profile image" class="img-fluid hero-img"></a>
           </li>
           <li class="nav-item">
@@ -48,7 +48,6 @@
           </li>
 
           {% if user.is_authenticated %}
-          <!-- Display the user's username and Profile link when authenticated -->
           <li class="nav-item">
             <span class="nav-link">Hello, {{ user.username }}!</span>
           </li>

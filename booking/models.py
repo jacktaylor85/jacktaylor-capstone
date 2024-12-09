@@ -15,10 +15,11 @@ class BookableService(models.Model):
         return self.name
 
 class Booking(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    item = models.ForeignKey('BookableService', on_delete=models.CASCADE)
-    booking_date = models.DateField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
+    service = models.CharField(max_length=255, default="Default service")
+    booking_date = models.DateTimeField()
+    status = models.CharField(max_length=50, choices=[("Pending", "Pending"), ("Confirmed", "Confirmed")], default="Default status")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        f'{self.user.username} booked {self.item.name} on {self.booking_date}'
+        return f"{self.user.username} - {self.service} - {self.status}"
