@@ -15,6 +15,9 @@ class HomePage(TemplateView):
     """
     template_name = 'index.html'
 
+def about_us(request):
+    return render(request, 'about_us.html')
+
 def login_view(request):
     form = AuthenticationForm()  
 
