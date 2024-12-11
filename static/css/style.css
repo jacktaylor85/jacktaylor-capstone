@@ -56,7 +56,7 @@ h1 {
     height: 52px;
   }
 
-@media (max-width: 425px){
+@media (max-width: 600px){
   
 .width-change {
   max-width: 90% !important;
