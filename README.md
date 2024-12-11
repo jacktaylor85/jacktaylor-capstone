@@ -158,6 +158,9 @@ Acceptance Criteria:
 Home Page:
 ![Capstone Homepage](docs/wireframes/Capstone%20HomePage.png)
 
+
+Mobile Page:
+![Capstone Mobile](docs/wireframes/Capstone%20Mobile.png)
 ### Agile Development
 Kanban Board:
 ![Kanban board](docs/agile/Agile%20Development%20Snapshot.png)
@@ -166,9 +169,69 @@ Kanban Board:
 ![ERD](docs/erd/Untitled.png)
 ## Features
 
-## Design
+# Background Image
+
+The background images showcases a couple using a laptop to make a booking. This is to enhance the user's experience and this is likely to make the user think that there is a positive reaction to using my site. 
+![Background Image](static/images/bruce-mars-ieIY61ZHhs8-unsplash.jpg)
+
+# Services Section
+
+The services section showcases available bookings and allows the user to filter these bookings by location, minimum and maximum price. These bookings were paginated by 6 to show a good amount of content on all screen sizes. 
+![Services Image](docs/images/Opera%20Snapshot_2024-12-11_191006_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+
+# Navbar
+
+The Navbar allows the user to see all the links to the information with descriptive titles so that the user knows where the link will take them. These were made as simple as possible while also allowing the user to know what information they will gain by using the link.
+
+![Navbar Image](docs/images/Opera%20Snapshot_2024-12-11_191402_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+
+# Profiles
+
+There is a few profile pages. Firstly, using the navbar link Login. You are able to login to an account and new users are able to register if they do not have an account. These can also be accessed by an unauthorised user if they use the click on the profile image in the center of the navbar. When the user is logged in and they are authorised then their own bookings can be accessed using the profile image. The user is shown information on their current booking and they are able to cancel or update them. When the user would like to logout then they are able to do so by using the logout navbar link that shows when the user is authenticated. 
+# Profile Login:
+![Profile Login](docs/images/Opera%20Snapshot_2024-12-11_191402_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+# Login Page
+![Profile Login](docs/images/Opera%20Snapshot_2024-12-11_191830_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+# Registration Page:
+![Profile Register](docs/images/Opera%20Snapshot_2024-12-11_191925_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+# Authenticated Navbar
+![Navbar LoggedIn](docs/images/Opera%20Snapshot_2024-12-11_192036_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+# Profile Page:
+![Profile Page](docs/images/Opera%20Snapshot_2024-12-11_192204_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+
+# About Us
+
+The about us page showcases what the site does and uses the same template as the homepage with different text.
+
+![About us](docs/images/Opera%20Snapshot_2024-12-11_192334_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
+
+# Booking
+
+When you click on the book now button on the services card, it takes you to this page where you can choose your clock-in and clock-out dates, add guests and then the total price is calculated for you in the profile page.
+
+![Booking](docs/images/Opera%20Snapshot_2024-12-11_192448_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
 
 ## Testing
+
+# HTML Validation
+
+
+
+# CSS Validation
+
+![CSS Validation](docs/images/Opera%20Snapshot_2024-12-11_193717_jigsaw.w3.org.png)
+
+# Accessability and Performance Validation
+
+![Lighthouse](docs/images/Screenshot%202024-12-11%20194721.png)
+
+![Wave Accessibility](docs/images/Opera%20Snapshot_2024-12-11_195133_wave.webaim.org.png)
+
+# Pep8 Validation
+
+![Pep8]()
+
+# Known Bugs
 
 ## Deployment
 
