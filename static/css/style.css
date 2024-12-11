@@ -56,6 +56,14 @@ h1 {
     height: 52px;
   }
 
+@media (max-width: 425px){
+  
+.width-change {
+  max-width: 90% !important;
+}
+
+}
+
   .img-text {
     position: absolute;  
     top: 10%;           
@@ -81,10 +89,27 @@ h1 {
     font-weight: bold;   
     padding: 5px 10px;    
     border-radius: 5px;   
-    max-width: 45%; 
+    max-width: 45%;
     word-wrap: break-word; 
     overflow: hidden;
   }
+
+  .text-long {
+    display: block; 
+}
+
+
+@media (max-width: 768px) {
+    .text-long {
+        display: none; 
+    }
+
+    .text-short {
+        display: block; 
+        font-size: 16px;
+    }
+
+}
 
   .about-text > p {
     font-family: 'open sans';

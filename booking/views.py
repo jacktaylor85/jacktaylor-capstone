@@ -37,6 +37,7 @@ def register_view(request):
         if form.is_valid():
             form.save()  
             return redirect('login')  
+    else:
         form = UserCreationForm()
 
     return render(request, 'register.html', {'form': form})
@@ -66,6 +67,7 @@ def services_page(request):
 @login_required  
 def book_service(request, service_id):
     service = get_object_or_404(BookableService, id=service_id)
+    total_price = None
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -73,12 +75,23 @@ def book_service(request, service_id):
             booking = form.save(commit=False)
             booking.service = service  
             booking.user = request.user  
+
+            # Calculate the total price
+            duration = (booking.checkout_date - booking.checkin_date).days
+            if duration < 1:  # Ensure at least one day is booked
+                duration = 1
+            total_price = service.price * duration
+
             booking.save()
             return redirect('profile') 
     else:
         form = BookingForm()
 
-    return render(request, 'book_service.html', {'form': form, 'service': service})
+    return render(request, 'book_service.html', {
+        'form': form, 
+        'service': service, 
+        'total_price': total_price,
+    })
 
 
 @login_required

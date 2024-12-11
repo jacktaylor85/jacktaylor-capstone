@@ -26,3 +26,10 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.service.name} - {self.status}"
+
+    @property
+    def total_price(self):
+        duration = (self.checkout_date - self.checkin_date).days
+        if duration < 1:  
+            duration = 1
+        return self.service.price * duration
