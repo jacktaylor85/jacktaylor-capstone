@@ -186,6 +186,7 @@ The Navbar allows the user to see all the links to the information with descript
 ### Profiles
 
 There is a few profile pages. Firstly, using the navbar link Login. You are able to login to an account and new users are able to register if they do not have an account. These can also be accessed by an unauthorised user if they use the click on the profile image in the center of the navbar. When the user is logged in and they are authorised then their own bookings can be accessed using the profile image. The user is shown information on their current booking and they are able to cancel or update them. When the user would like to logout then they are able to do so by using the logout navbar link that shows when the user is authenticated. 
+
 ### Profile Login:
 ![Profile Login](docs/images/Opera%20Snapshot_2024-12-11_191402_8000-jacktaylor8-jacktaylorc-89cis3ew7jf.ws.codeinstitute-ide.net.png)
 ### Login Page
@@ -231,8 +232,16 @@ When you click on the book now button on the services card, it takes you to this
 
 ### Known Bugs
 
+
+
 ## Deployment
+
+
 
 ## Technologies Used
 
+
+
 ## Credits
+
+
