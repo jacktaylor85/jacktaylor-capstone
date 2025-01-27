@@ -227,14 +227,45 @@ My HTML Validation threw some errors due to my buttons being anchored so that th
 
 ![Wave Accessibility](docs/images/Opera%20Snapshot_2024-12-11_195133_wave.webaim.org.png)
 
-### Pep8 Validation
+### Python Validation
 
-| Feature | admin.py | forms.py | models.py | urls.py | views.py |
-|---------|----------|----------|-----------|---------|----------|
-| Booking  | [no errors] | [no errors] | [no errors] | [no errors] | [no errors] |
-| Profile | [no errors] | [no errors] | [no errors] | [no errors] | [no errors] |
-| Services | [no errors] | [no errors] | [no errors] | [no errors] | [no errors] |
+#### Admin
 
+![Admin Validation](static/images/python%20linter%20admin.png)
+
+#### Apps
+
+![Apps Validation](static/images/apps.png)
+
+#### Forms
+
+![Forms Validation](static/images/forms.png)
+
+#### Models
+
+![Models Validation](static/images/models.png)
+
+#### Views
+
+![Views Validation](static/images/views.png)
+
+### Manual Testing
+
+| **User Stories** |  Tested |  Works As Intended |
+|  --- | --- | --- |
+| As an Admin I can access a dashboard so that I can manage booking and users. | ✅ | ✅
+| As a User I can make an account so that I can create bookings and view bookings I have made in the past. | ✅ | ✅
+| As a user, I must be able to view a list of services available for booking so that I can choose the one I need. | ✅ | ✅
+| As a user, I must be able to view my current bookings and cancel them if needed. | ✅ | ✅
+| As an admin , I must be able to view my current bookings and cancel them if needed. | ✅ | ✅
+| As a user, I must be able to select a service, choose a date and time, and confirm my booking so that my reservation is secured. | ✅ | ✅
+| As a user, I should receive email notifications to confirm my booking and remind me of upcoming appointments. | ✅ | ✅
+| As an admin, I should receive notifications about new bookings or cancellations. | ✅ | ✅
+| As a user, I should be able to search for services and filter them by category, availability, or price. | ✅ | ✅
+
+### JavaScript Validation
+
+My Capstone project did not include any JavaScript therefore this is N/A.
 
 ### Known Bugs
 

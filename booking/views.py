@@ -15,18 +15,20 @@ class HomePage(TemplateView):
     """
     template_name = 'index.html'
 
+
 def about_us(request):
     return render(request, 'about_us.html')
 
+
 def login_view(request):
-    form = AuthenticationForm()  
+    form = AuthenticationForm()
 
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home')  
+            return redirect('home')
 
     return render(request, 'login.html', {'form': form})
 
@@ -35,8 +37,8 @@ def register_view(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()  
-            return redirect('login')  
+            form.save()
+            return redirect('login')
     else:
         form = UserCreationForm()
 
@@ -45,8 +47,6 @@ def register_view(request):
 
 def services_page(request):
     services = BookableService.objects.all()
-
-    
     location = request.GET.get('location')
     min_price = request.GET.get('min_price')
     max_price = request.GET.get('max_price')
@@ -58,13 +58,15 @@ def services_page(request):
     if max_price:
         services = services.filter(price__lte=max_price)
 
-    paginator = Paginator(services, 6)  
-    page_number = request.GET.get('page')  
-    page_obj = paginator.get_page(page_number) 
+    paginator = Paginator(services, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    return render(request, 'services.html', {'services': services,'page_obj': page_obj})
-   
-@login_required  
+    return render(request, 'services.html', {'services': services,
+                  'page_obj': page_obj})
+
+
+@login_required
 def book_service(request, service_id):
     service = get_object_or_404(BookableService, id=service_id)
     total_price = None
@@ -73,8 +75,8 @@ def book_service(request, service_id):
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.service = service  
-            booking.user = request.user  
+            booking.service = service
+            booking.user = request.user
 
             # Calculate the total price
             duration = (booking.checkout_date - booking.checkin_date).days
@@ -83,13 +85,13 @@ def book_service(request, service_id):
             total_price = service.price * duration
 
             booking.save()
-            return redirect('profile') 
+            return redirect('profile')
     else:
         form = BookingForm()
 
     return render(request, 'book_service.html', {
-        'form': form, 
-        'service': service, 
+        'form': form,
+        'service': service,
         'total_price': total_price,
     })
 
@@ -102,16 +104,16 @@ def profile(request):
 
 @login_required
 def update_booking(request, booking_id):
-    booking = get_object_or_404(request.user.bookings, id=booking_id)  
+    booking = get_object_or_404(request.user.bookings, id=booking_id)
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
             form.save()
-            return redirect('profile')  
+            return redirect('profile')
     else:
         form = BookingForm(instance=booking)
-    return render(request, 'update_booking.html', {'form': form, 'booking': booking})
-
+    return render(request, 'update_booking.html',
+                  {'form': form, 'booking': booking})
 
 
 @login_required
